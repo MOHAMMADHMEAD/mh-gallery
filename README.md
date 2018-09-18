@@ -6,7 +6,7 @@ This project contains a gallery of images with a professional design and easy ha
 
 
 ## Development server
-
+Run `npm install`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
