@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-xs-2 col-lg-2"><select id="rows" class="form-control" #rowLength
+                                                    (change)="viewCount(rowLength.value)">
+      <option value="10">10</option>
+      <option value="25" selected>25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="{{datasource.length}}">All</option>
+    </select></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 img-gallery" *ngFor="let image of dataPaging;let i= index">
+
+      <a class="pointer">
+
+<div *ngIf="isArray;else object">
+        <img src="{{image}}"  width="254" height="254">
+</div>
+
+  <ng-template #object>
+
+
+          <img src="{{image[index]}}"  width="254" height="254">
+        </ng-template>
+      </a>
+      <div class="desc label-gallery">{{image.desctiption}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" class="text-center">
+      <div class="pagination" *ngIf="length.length>0"><a (click)="prvPage()" class="pointer">«</a> <a
+        *ngFor="let count of length;let i=index" (click)="page(i+1)" class="pointer"
+        [ngClass]="i+1==currentPage?'active':''">{{i+1}}</a> <a (click)="nextPage()" class="pointer">»</a></div>
+      <div class="pagination" *ngIf="length.length==0"><a class="disabled">«</a> <a class="active">1</a> <a
+        class="disabled">»</a></div>
+    </div>
+  </div>
+</div>
