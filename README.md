@@ -3,7 +3,10 @@
 Responsive image gallery designed for high resolution images.
 
 This project contains a gallery of images with a professional design and easy handling. There will be no problem in dealing with the data format.
+https://www.npmjs.com/package/mh-gallery
 
+#install 
+`npm install mh-gallery --save`
 
 ## Development server
 Run `npm install`
